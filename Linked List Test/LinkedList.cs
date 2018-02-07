@@ -48,9 +48,12 @@ namespace Linked_List_Test
             }
         }
 
-        public object Items(int Index)
+        public object Items(int index)
         {
-            return null;
+            for (int i = 0; i < index; i++)
+            {
+
+            }
         }
         public void InsertFirst(object o)
         {
@@ -64,12 +67,21 @@ namespace Linked_List_Test
                 newFirstItem.Next = firstItem;
             }
             firstItem = newFirstItem;
+            itemCount++;
         }
         public void InsertLast(object o)
         {
             ListItem newLastItem = new ListItem(o);
-            lastItem.Next = newLastItem;
+            if (itemCount == 0)
+            {
+                firstItem = newLastItem;
+            }
+            else
+            {
+                lastItem.Next = newLastItem;
+            }
             lastItem = newLastItem;
+            itemCount++;
         }
         public void RemoveAt(int Index)
         {
